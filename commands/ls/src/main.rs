@@ -17,5 +17,10 @@ fn list_directory(path: &str) {
 }
 
 fn main() {
-    list_directory(".");
+    let args: Vec<String> = std::env::args().collect();
+    if args.len() > 2 {
+        list_directory(&args[1].clone());
+    } else {
+        list_directory(".");
+    }
 }

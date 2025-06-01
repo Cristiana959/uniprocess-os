@@ -10,3 +10,6 @@ performance_measure = "2.0.0"
 wasi-common = "28.0.1"
 wasmtime = "28.0.1"
 cap-std = "3.4.4"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+chrono = { version = "0.4.41", features = ["serde"] }
