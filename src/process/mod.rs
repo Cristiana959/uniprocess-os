@@ -22,7 +22,6 @@ pub struct PCB {
     pub name: String,
     pub started_at: DateTime<Local>,
     pub status: String,
-    // pub memory: usize,
 }
 
 pub type ProcessTable = Arc<Mutex<HashMap<u32, PCB>>>;
@@ -68,7 +67,6 @@ pub(crate) fn create_process(
                 &serde_json::to_string(&process_vec).unwrap(),
             )
             .unwrap()
-            //.envs(env) //uncomment ca sa pasam env var pentru diretorul de pwd din care taiem partea de mount
             .args(function_args) //uncomment pentru a pasa argumente functiilor mkdir, touch etc
             .unwrap()
             .build();
